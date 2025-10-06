@@ -1,8 +1,18 @@
-{:source-paths ["src/core" "test"]
- :dependencies [[reagent "1.1.0"]
-                [com.andrewmcveigh/cljs-time "0.5.2"]
-                [camel-snake-kebab "0.4.2"]
-                [prismatic/dommy "1.1.0"]]
+{:deps true ; Use deps from deps.edn with newer shadow-cljs (from 2.19.0)
+ :source-paths ["src/core" "test"]
+
+; :dependencies [[reagent/reagent "2.0.0-alpha3"]
+;                [com.andrewmcveigh/cljs-time "0.5.2"]
+;                [camel-snake-kebab "0.4.2"]
+;                [prismatic/dommy "1.1.0"]]
+                
+ :npm-deps
+    {"react" "^18.3.1"
+    "react-dom" "^18.3.1"
+    "@mui/material" "^5.15.14"
+    "@emotion/react" "^11.11.3"
+    "@emotion/styled" "^11.11.0"}
+  
  :builds       {:test         {:target    :karma
                                :output-to "target/test.js"}
                 :browser-test {:target    :browser-test
