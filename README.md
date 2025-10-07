@@ -3,7 +3,7 @@
 [![Actions Status](https://github.com/arttuka/reagent-material-ui/workflows/CI/badge.svg)](https://github.com/arttuka/reagent-material-ui/actions)
 
 **reagent-material-ui** is a [Reagent](http://reagent-project.github.io/) wrapper
-for [MUI (formerly Material UI) v5](https://mui.com/).
+for [MUI (formerly Material UI) (currently v7)](https://mui.com/).
 
 The purpose of this library is to help ClojureScript/Reagent developers use a modern React UI library
 without the hassle that Reagent/React interop usually is. It is meant to be comprehensive and up to date.
@@ -13,9 +13,16 @@ without the hassle that Reagent/React interop usually is. It is meant to be comp
 If you aren't familiar with [MUI or its documentation](https://mui.com) yet, that is the best place to start.
 Their examples are very good. and this library tries to follow the original ideas as well as possible. See the [example project](./example) for a simple usage example.
 
-To add MUI to an existing Reagent project, just add this library to your dependencies:
+To add MUI to an existing Reagent project, just add this library to your dependencies.
+
+Note that this is a fork of
 ```
 [arttuka/reagent-material-ui "5.11.12-0"]
+```
+and there's no release yet. You can use it in your own project with 
+```
+[kaosko/reagent-material-ui {:git/url "https://github.com/kaosko/reagent-material-ui"
+        :git/sha "latest-commit-sha"}]
 ```
 
 Most of the library is in the form of regular Reagent components. Each component is contained in a namespace that mirrors
@@ -27,9 +34,9 @@ Namespace `reagent-mui.components` contains a copy of each component from `@mui/
 Namespace `reagent-mui.colors` contains all color definitions from `@mui/material/colors`.
 The colors are organized in a single namespace, so `@mui/material/colors/red` becomes `reagent-mui.colors/red`.
 
-Namespace `reagent-mui.styles` contains helper functions and components from `@mui/material/styles`.
-
-Namespace `reagent-mui.jss-styles` contains helper functions and components from `@mui/styles`.
+_NOTE: @mui/styles and associated ns and tests were removed as v5 specific and deprecated_
+~~Namespace `reagent-mui.styles` contains helper functions and components from `@mui/material/styles`.~~
+~~Namespace `reagent-mui.jss-styles` contains helper functions and components from `@mui/styles`.~~
 
 Namespace `reagent-mui.core` contains all components from `@mui/core`.
 
