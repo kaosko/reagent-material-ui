@@ -1,4 +1,10 @@
-{:paths ["src/core" "src/icons" "src/x"]
- :deps  {reagent/reagent                     {:mvn/version "2.0.0-alpha3"}
+{:paths ["src/core" "test" "src/icons" "src/x"]
+ ; only manage cljs dependencies here. cljs-time is only used in tests
+ ; shadow-cljs will merge deps
+ ; with :deps true in shadow-cljs.edn, we must declare shadow version here as well
+ ; https://shadow-cljs.github.io/docs/UsersGuide.html#project-install
+ :deps  {thheller/shadow-cljs {:mvn/version "3.2.1"}
+         reagent/reagent                     {:mvn/version "2.0.0-alpha3"}
          com.andrewmcveigh/cljs-time         {:mvn/version "0.5.2"}
+         prismatic/dommy                     {:mvn/version "1.1.0"}
          camel-snake-kebab/camel-snake-kebab {:mvn/version "0.4.3"}}}
